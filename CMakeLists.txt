@@ -46,7 +46,9 @@ if(BUILD_TESTING AND log_surgeon_BUILD_TESTING)
     set(log_surgeon_ENABLE_TESTS ON)
 endif()
 
-find_package(fmt 11.2.0 REQUIRED)
+# Velox requires fmt 10.1.1
+# See also: https://github.com/y-scope/velox/blob/d78134d58d09d2c138bec52fde924d3b120f7fb6/CMake/resolve_dependency_modules/fmt.cmake#L16
+find_package(fmt 10.1.1 REQUIRED)
 message(STATUS "Found fmt ${fmt_VERSION}.")
 
 find_package(Microsoft.GSL 4.0.0 REQUIRED)
